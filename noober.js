@@ -15,7 +15,7 @@ function pageLoad() {
     levelOfService = 'Noober Pool'
   } else if (ride[0].purpleRequested = true) {
     levelOfService = 'Noober Purple'
-  } else if ((ride[0].numberOfPassengers + ride[1].numberOfPassengers + ride[2].numberOfPassengers) > 3) {
+  } else if ((ride[0].numberOfPassengers) > 3) {
     levelOfService = 'Noober XL'
   } else {
     levelOfService = 'Noober X'
@@ -23,8 +23,9 @@ function pageLoad() {
 
   // I intepreted Question #3 ("If the numberOfPassengers in a single ride request is greater than 3,
   // we'll need to upgrade to a larger car. Display "Noober XL" as the level of service.") as saying that 
-  // if the total number of passengers (from all 3 legs) is greater than 3, then we should display
-  // "Noober XL" as the level of service. 
+  // if the total number of passengers is greater than 3, then we should display
+  // "Noober XL" as the level of service. From the data, it appears that if a ride request is for 3 or more people, 
+  // then this will show up in the first "leg" in the ride ("ride[0].numberOfPassengers").
 
   passenger1Name = ride[0].passengerDetails.first + ' ' + ride[0].passengerDetails.last
   passenger1Phone = ride[0].passengerDetails.phoneNumber
